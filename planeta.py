@@ -17,3 +17,18 @@ class Planeta:
             return True
         else:
             return False
+        
+    def __str__(self):
+        if self.es_planeta_exterior():
+            tipo = "Exterior"
+        else:
+            tipo = "Interior"
+        return "Planeta: " + str(self.nombre) + " | Densidad: " + str(self.calcular_densidad()) + " kg/m3 | Tipo: " + tipo
+
+# ejemplos de uso que me dio la IA, esta usa el __init__ del inicio para darle los datos que necesita
+
+tierra = Planeta("Tierra", 5.972e24, 6371000, 1.0, True)
+print(tierra)
+
+jupiter = Planeta("Jupiter", 1.898e27, 69911000, 5.204, False)
+print(jupiter)
